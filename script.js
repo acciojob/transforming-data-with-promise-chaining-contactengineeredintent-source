@@ -24,34 +24,34 @@ btnStart.addEventListener("click", () => {
     });
   };
 
-  const promiseTwo = () => {
+  const promiseTwo = (value) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve((inputValue *= 2));
+        resolve((value * 2));
       }, 1000);
     });
   };
 
-  const promiseThree = () => {
+  const promiseThree = (value) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve((inputValue -= 3));
+        resolve((value - 3));
       }, 1000);
     });
   };
 
-  const promiseFour = () => {
+  const promiseFour = (value) => {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        resolve((inputValue /= 2));
+        resolve((value / 2));
       }, 1000);
     });
   };
 
-  const promiseFive = function () {
+  const promiseFive = function (value) {
     return new Promise(function (resolve, reject) {
       setTimeout(function () {
-        resolve((inputValue += 10));
+        resolve((value + 10));
       }, 1000);
     });
   };
@@ -60,22 +60,22 @@ btnStart.addEventListener("click", () => {
     .then((data) => {
       // console.log(data);
       populateResultTag(data);
-      return promiseTwo();
+      return promiseTwo(data);
     })
     .then((data) => {
       // console.log(data);
       populateResultTag(data);
-      return promiseThree();
+      return promiseThree(data);
     })
     .then((data) => {
       // console.log(data);
       populateResultTag(data);
-      return promiseFour();
+      return promiseFour(data);
     })
     .then((data) => {
       // console.log(data);
       populateResultTag(data);
-      return promiseFive();
+      return promiseFive(data);
     })
     .then((data) => {
       populateResultTag(data);
