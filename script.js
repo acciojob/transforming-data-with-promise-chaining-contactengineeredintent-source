@@ -1,9 +1,15 @@
 let btnStart = document.querySelector("#btn");
 let resultTag = document.querySelector("#output");
-
+let count = 0;
 function populateResultTag(inputValue) {
+  count++;
   let pElement = document.createElement("p");
-  pElement.textContent = `Result: ${inputValue}`;
+  if (count != 5) {
+    pElement.textContent = `Result: ${inputValue}`;
+  }
+  else{
+    pElement.textContent = `Final Result: ${inputValue}`;
+  }
   resultTag.appendChild(pElement);
 }
 
