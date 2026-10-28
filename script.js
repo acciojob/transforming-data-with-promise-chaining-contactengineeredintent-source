@@ -1,10 +1,9 @@
-//your JS code here. If required.
 let btnStart = document.querySelector("#btn");
 let resultTag = document.querySelector("#output");
 
 function populateResultTag(inputValue) {
   let pElement = document.createElement("p");
-  pElement.textContent = inputValue;
+  pElement.textContent = `Result: ${inputValue}`;
   resultTag.appendChild(pElement);
 }
 
